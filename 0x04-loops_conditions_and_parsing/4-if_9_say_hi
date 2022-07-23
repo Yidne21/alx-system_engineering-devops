@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Prints Hi if i is 9
+i=0
+while [ $i -le 9 ]
+do
+	if [[ $i = 9 ]]
+		then echo "Hi"
+	fi
+	echo "Best School"
+	((i++))
+done
