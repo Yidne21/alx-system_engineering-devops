@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#prints the pid of all processes
+ps -faux
