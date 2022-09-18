@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Client configuration file with out using password 
+Host 3.238.202.182
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
