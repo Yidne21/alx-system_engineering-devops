@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Create custom 404 page
-INDEX_COPY="Holberton School for the win!"
-ERROR_COPY="Ceci n'est pas une page - 404"
+INDEX_COPY="404 Not Found"
+ERROR_COPY="Ceci n'est pas une page"
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
