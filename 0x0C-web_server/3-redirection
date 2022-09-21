@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-# Configure a new Nginx server so that /redirect_me is redirecting to another page.
-# The redirection must be a “301 Moved Permanently”
+# Create redirect
+INDEX_COPY="301 Moved Permanently"
 
 sudo apt-get -y update
-sudo apt-get -y upgrade
 sudo apt-get -y install nginx
+echo "$INDEX_COPY" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+sudo sed -i '/^\sserver_name.*/a \        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 sudo service nginx start
-new_string="\\\trewrite ^/redirect_me https://github.com/Yidne21 permanent;"
-sudo sed -i "19i $new_string" /etc/nginx/sites-available/default
-sudo service nginx restart
-sudo service nginx reload
+
