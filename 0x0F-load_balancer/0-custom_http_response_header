@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script configures a new Ubuntu web server to have Nginx server installed
+sudo apt-get -y update
+sudo apt-get install -y nginx
+ufw allow 'Nginx HTTP'
+sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo service nginx restart
